@@ -21,7 +21,7 @@ _analytics.plugins.testAndTarget = (function(omniture, config){
         wd = omniture.getVariable('wd');
 
         omniture.addPlugin('trackTNT', trackTNT);
-        var tnt = omniture.setVariable('testAndTarget', s.trackTNT());
+        var tnt = omniture.setVariable('testAndTarget',  (s.eVar18 || s.trackTNT()));
         omniture.setVariable('tnt',tnt);
         if(typeof mboxLoadSCPlugin == "function"){mboxLoadSCPlugin(omniture);}
     }
